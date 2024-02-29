@@ -1,0 +1,18 @@
+{%include "base.html"%}
+
+<body>
+    <div id="content", name="content">
+        {%block content%}
+            <u1>
+                {% for item in item_list %}
+                    <li>Item Name: {{item.item_name}}</li>
+                    <li>Item Description: {{item.item_description}}</li>
+                    <li>Item Price: {{item.item_price}}</li>
+                    <li>Item Rating: {{item.item_rating}}</li>
+                    <li>Item Review: {{item.item_reviews}}</li>
+                    <br>
+                {% endfor %}
+            </u1>
+        {%endblock%}
+    </div>
+</body>

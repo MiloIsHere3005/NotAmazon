@@ -1,0 +1,42 @@
+{%include "base.html"%}
+{%load static%}
+
+<head>
+    <link rel="stylesheet" href="{%static 'css/signup.css'%}">
+</head>
+<body>
+    <div id='content', name="content">
+        {%block content%}
+        <br>
+        <br>
+        <br>
+            <h1> USER SIGN UP </h1>
+            <u1>
+                <br>
+                <br>
+                <br>
+                <label>FIRST NAME:</label>
+                <input type="text" id="fname" size="15" />
+                <br>
+                <br>
+                <label>LAST NAME:</label>
+                <input type="text" id="lname" size="15" />
+                <br>
+                <br>
+                <label>EMAIL:</label>
+                <input type="text" id="email" size="15" />
+                <br>
+                <br>
+                <label>PASSWORD:</label>
+                <input type="text" id="password" size="15" />
+                <br>
+                <br>
+                <label>VERIFY PASSWORD:</label>
+                <input type="text" id="password" size="15" />
+                <br>
+                <br>
+                <button>
+                    <a href="congrats">SIGN UP</a>
+                </button>
+        {%endblock%}
+    
