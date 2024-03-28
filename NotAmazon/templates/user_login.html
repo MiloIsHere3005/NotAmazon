@@ -1,4 +1,4 @@
-{%include "base.html"%}
+<!---{%include "base.html"%}
 {%load static%}
 
 <head>
@@ -19,6 +19,7 @@
                 <input type="text" id="username" size="15" />
                 <br>
                 <br>
+                <br>
                 <label>PASSWORD:</label>
                 <input type="text" id="password" size="15" />
                 <br>
@@ -30,10 +31,13 @@
                 <br>
                 <br>
                 <br>
-                <button>
-                    <a href="signup">Not a user? Click here!</a>
-                </button>
             </u1>
         {%endblock%}
     </div>
-</body>
+</body>-->
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form}}
+    <button> LOGIN </button>
+</form>

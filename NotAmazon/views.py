@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
+from .forms import Login_Form
 from .models import Item
 
 # Create your views here.
@@ -17,11 +19,19 @@ def shop(request):
     context = {"item_list":item_list}
     return render(request, "shop.html", context)
 
-def login(request):
-    return render(request, "login.html", {})
+def user_login(request):
+    if request.method == "POST":
+        form = Login_Form(request.POST)
+        form.user_email = request.POST["user_email"]
+        form.user_pass = request.POST["user_pass"]
+        user = authenticate(request, user_email=form.user_email, user_pass=form.user_pass)
+        if user is not None:
+            login(request, user)
+            return redirect("home.html")
+        else:
+            return redirect("user_login.html")
+    else:
+        return render(request, "user_login.html", {"form":Login_Form})
 
-def signup(request):
-    return render(request, "signup.html", {})
-
-def congrats(request):
-    return render(request, "congrats.html", {})
+def user_signup(request):
+    return render(request, "user_signup.html", {})
