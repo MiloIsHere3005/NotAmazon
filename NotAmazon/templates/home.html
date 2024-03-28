@@ -2,8 +2,11 @@
 
 <body>
     <div id='content', name="content">
-        {%block content%}
+        {% block content %}
             <h1> This is the home page! </h1>
-        {%endblock%}
+        {% if user.is_authenticated %}
+            <center><h1> Welcome back, {{user.username}}!</h1></center>
+        {% endif %}
+        {% endblock %}
     </div>
 </body>
