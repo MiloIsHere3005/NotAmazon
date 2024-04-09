@@ -1,3 +1,5 @@
+{% load static %}
+
 <form method="POST" action="{% url "signup"%}">
     {% csrf_token %}
     {{form.as_p}}
